@@ -1,7 +1,9 @@
 import * as React from "react";
-import { Container, Hidden, Checkbox, Select, MenuItem, TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
 import { Bar } from "react-chartjs-2";
+import { withStyles } from "@material-ui/core/styles";
+import { Container, Hidden, Checkbox, Select, MenuItem, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Fab, IconButton } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const styles = (theme) => ({
   mainRow: {
@@ -153,6 +155,11 @@ class OperatorTable extends React.Component {
               <Hidden xsDown>
                 <TableCell className="hidden-xs">SKILL</TableCell>
               </Hidden>
+              <TableCell>
+                <IconButton aria-label="Add operator">
+                  <AddIcon />
+                </IconButton>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -180,6 +187,11 @@ class OperatorTable extends React.Component {
                   <Hidden xsDown>
                     <TableCell>{op.skills[op.elite].description}</TableCell>
                   </Hidden>
+                  <TableCell>
+                    <IconButton aria-label="Delete operator">
+                      <DeleteIcon />
+                    </IconButton>
+                  </TableCell>
                 </TableRow>
                 <TableRow className={classes.subRow}>
                   <TableCell></TableCell>
