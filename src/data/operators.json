@@ -1,0 +1,12 @@
+[
+  {
+    "name": "name1",
+    "rarity": 4,
+    "baseSkills": [
+      { "type": "ReceptionRoom", "value": 10, "description": "incease seach speed (10%)" },
+      { "type": "ReceptionRoom", "value": 20, "description": "incease seach speed (20%)" },
+      { "type": "ReceptionRoom", "value": 45, "description": "incease seach speed (45%)" }
+    ],
+    "icon": "hoge.png"
+  }
+]
