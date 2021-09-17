@@ -2,11 +2,56 @@
   {
     "name": "name1",
     "rarity": 4,
-    "baseSkills": [
-      { "type": "ReceptionRoom", "value": 10, "description": "incease seach speed (10%)" },
-      { "type": "ReceptionRoom", "value": 20, "description": "incease seach speed (20%)" },
-      { "type": "ReceptionRoom", "value": 45, "description": "incease seach speed (45%)" }
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)\nsearch clue 4 (lodos)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 45, "description": "incease seach speed (45%)" }
     ],
-    "icon": "hoge.png"
+    "color": "rgb(255, 99, 132)"
+  },
+  {
+    "name": "name2",
+    "rarity": 6,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 45, "description": "incease seach speed (45%)" }
+    ],
+    "color": "rgb(54, 162, 235)"
+  },
+  {
+    "name": "name3",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 45, "description": "incease seach speed (45%)" }
+    ],
+    "color": "rgb(255, 159, 64)"
+  },
+  {
+    "name": "name4",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 45, "description": "incease seach speed (45%)" }
+    ],
+    "color": "rgb(255, 205, 86)"
+  },
+  {
+    "name": "name5",
+    "rarity": 6,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 45, "description": "incease seach speed (45%)" }
+    ],
+    "color": "rgb(75, 192, 192)"
   }
 ]
