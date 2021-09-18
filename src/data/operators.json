@@ -1,57 +1,266 @@
 [
   {
-    "name": "name1",
+    "name": "guiterno",
     "rarity": 4,
     "elite": 0,
     "skills": [
-      { "value": 10, "description": "incease seach speed (10%)\nsearch clue 4 (lodos)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 45, "description": "incease seach speed (45%)" }
+      { "value": 0, "description": "incease seach speed (10%)\nsearch clue 4 (lodos)" },
+      { "value": 25, "description": "incease seach speed (20%)" },
+      { "value": 25, "description": "incease seach speed (45%)" }
     ],
-    "color": "rgb(255, 99, 132)"
+    "color": "#D2A9D2"
   },
   {
-    "name": "name2",
+    "name": "chen",
     "rarity": 6,
     "elite": 0,
     "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 45, "description": "incease seach speed (45%)" }
+      { "value": 0, "description": "incease seach speed (10%)" },
+      { "value": 0, "description": "incease seach speed (20%)" },
+      { "value": 25, "description": "incease seach speed (45%)" }
     ],
-    "color": "rgb(54, 162, 235)"
+    "color": "#5C649E"
   },
   {
-    "name": "name3",
+    "name": "astesia",
     "rarity": 5,
     "elite": 0,
     "skills": [
       { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 45, "description": "incease seach speed (45%)" }
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 25, "description": "incease seach speed (45%)" }
     ],
-    "color": "rgb(255, 159, 64)"
+    "color": "#0886CC"
   },
   {
-    "name": "name4",
+    "name": "red",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "incease seach speed (10%)" },
+      { "value": 0, "description": "incease seach speed (20%)" },
+      { "value": 25, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#CB3C45"
+  },
+  {
+    "name": "shirayuki",
+    "rarity": 4,
+    "elite": 0,
+    "skills": [
+      { "value": 20, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 20, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#CDD5D5"
+  },
+  {
+    "name": "may",
+    "rarity": 4,
+    "elite": 0,
+    "skills": [
+      { "value": 20, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 20, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#C9A9AC"
+  },
+  {
+    "name": "rope",
+    "rarity": 4,
+    "elite": 0,
+    "skills": [
+      { "value": 20, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 20, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#9786BB"
+  }  ,
+  {
+    "name": "12f",
+    "rarity": 2,
+    "elite": 0,
+    "skills": [
+      { "value": 20, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 20, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#FBEBD2"
+  },
+  {
+    "name": "utage",
+    "rarity": 4,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 20, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#C870C4"
+  },
+  {
+    "name": "jackey",
+    "rarity": 4,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "incease seach speed (10%)" },
+      { "value": 20, "description": "incease seach speed (20%)" },
+      { "value": 20, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#45454E"
+  },
+  {
+    "name": "arescabe",
     "rarity": 5,
     "elite": 0,
     "skills": [
       { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 45, "description": "incease seach speed (45%)" }
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 20, "description": "incease seach speed (45%)" }
     ],
-    "color": "rgb(255, 205, 86)"
+    "color": "#F5C150"
   },
   {
-    "name": "name5",
+    "name": "angerina",
     "rarity": 6,
     "elite": 0,
     "skills": [
       { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 45, "description": "incease seach speed (45%)" }
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 10, "description": "incease seach speed (45%)" }
     ],
-    "color": "rgb(75, 192, 192)"
+    "color": "#A4150C"
+  },
+  {
+    "name": "saria",
+    "rarity": 6,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 10, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#B6AEAA"
+  },
+  {
+    "name": "mostima",
+    "rarity": 6,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 10, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#1B389D"
+  },
+  {
+    "name": "indra",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 10, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#616161"
+  },
+  {
+    "name": "flanca",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 10, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#A86F5E"
+  },
+  {
+    "name": "bleeze",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 10, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#DDCCA3"
+  },
+  {
+    "name": "firewatch",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 10, "description": "incease seach speed (10%)" },
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 20, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#887850"
+  },
+  {
+    "name": "mountain",
+    "rarity": 6,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "incease seach speed (10%)" },
+      { "value": 0, "description": "incease seach speed (20%)" },
+      { "value": 0, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#857C7D"
+  },
+  {
+    "name": "jesica",
+    "rarity": 4,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "incease seach speed (10%)" },
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 10, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#7E86B6"
+  },
+  {
+    "name": "absant",
+    "rarity": 4,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "incease seach speed (10%)" },
+      { "value": 0, "description": "incease seach speed (20%)" },
+      { "value": 0, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#B2AA99"
+  },
+  {
+    "name": "istina",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "-" },
+      { "value": 0, "description": "-" },
+      { "value": 10, "description": "応接室配置時、手がかり捜索速度+10%、ウルサス学生自治団の手がかり(4)を入手しやすい。" }
+    ],
+    "color": "#DDEFDF"
+  },
+  {
+    "name": "qurie",
+    "rarity": 4,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "incease seach speed (10%)" },
+      { "value": 10, "description": "incease seach speed (20%)" },
+      { "value": 10, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#AE0908"
+  },
+  {
+    "name": "erizium",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "incease seach speed (10%)" },
+      { "value": 0, "description": "incease seach speed (20%)" },
+      { "value": 0, "description": "incease seach speed (45%)" }
+    ],
+    "color": "#168BBE"
   }
 ]

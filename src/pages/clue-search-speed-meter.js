@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { Container, Hidden, Checkbox, Select, MenuItem, TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from "@material-ui/core";
 import * as Utils from "../commons/utils";
 
-const VERSION = "20210917.175102";
+const VERSION = "20210917.175103";
 const APPKEY = "clue-search-speed-meter";
 
 const styles = (theme) => ({
@@ -29,7 +29,7 @@ const rarityBonuses = {
   2: 5,
   3: 5,
   4: 7,
-  5: 8,
+  5: 9,
   6: 10,
 };
 const eliteBonuses = {
@@ -54,6 +54,19 @@ const options = {
       },
     },
   },
+  scaleShowValues: true,
+  scales: {
+    yAxes: {
+        ticks: {
+          stepSize: 1,
+          autoSkip: false
+        },
+        scaleLabel: {
+          display: true,
+        }
+      }
+  },  
+
   elements: {
     bar: {
       borderWidth: 1,
@@ -64,7 +77,7 @@ const options = {
 const HorizontalBar = React.forwardRef((props, ref) => {
   const { data } = props;
   return (
-    <div style={{ height: "40vh" }}>
+    <div style={{ height: "50vh" }}>
       <div style={{ position: "relative", width: "100%", height: "100%" }}>
         <Bar ref={ref} data={data} options={options} />
       </div>
