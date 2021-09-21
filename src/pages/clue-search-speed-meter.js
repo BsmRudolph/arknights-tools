@@ -2,16 +2,16 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Bar } from "react-chartjs-2";
 import { withStyles } from "@material-ui/core/styles";
-import { Container, Hidden, Checkbox, Select, MenuItem, TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from "@material-ui/core";
-import { Button } from "@material-ui/core";
+import { Container, Hidden, Checkbox, Select, MenuItem, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, IconButton, Paper } from "@material-ui/core";
 import { Tooltip } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import { Zoom } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import * as Utils from "../commons/utils";
 
-const VERSION = "20210917.175103";
+const VERSION = "20210921.175103";
 const APPKEY = "clue-search-speed-meter";
+const ELITECLASS_NAME = ["未昇進", "昇進１", "昇進２"];
 
 const styles = (theme) => ({
   mainContainer: {
@@ -47,7 +47,6 @@ const styles = (theme) => ({
       padding: "4px 4px 8px 0px",
       verticalAlign: "top",
       textAlign: "center",
-      writingMode: "vertical-lr",
     },
   },
 });
@@ -105,7 +104,7 @@ const options = {
 const HorizontalBar = React.forwardRef((props, ref) => {
   const { data } = props;
   return (
-    <div style={{ height: "60vh" }}>
+    <div style={{ height: "80vh" }}>
       <div style={{ position: "relative", width: "100%", height: "100%" }}>
         <Bar ref={ref} data={data} options={options} />
       </div>
@@ -116,6 +115,7 @@ const HorizontalBar = React.forwardRef((props, ref) => {
 const OperatorTable = (props) => {
   const { classes } = props;
   const [operators, setOperators] = React.useState(props.operators);
+  const [eleteClass, setEleteClass] = React.useState(-1);
 
   const updateOperators = (ops) => {
     setOperators(ops);
@@ -138,11 +138,38 @@ const OperatorTable = (props) => {
     target.elite = e.target.value;
     target.speed = rarityBonuses[target.rarity] + eliteBonuses[target.elite] + target.skills[target.elite].value;
     updateOperators(news);
+    setEleteClass(-1);
   };
   const onHeaderSelectionChange = (e) => {
     const news = operators.slice();
     news.forEach((op) => (op.checked = e.target.checked));
     updateOperators(news);
+  };
+  const onHeaderEliteClassChange = (e) => {
+    const value = e.target.value;
+    if (value >= 0) {
+      const news = operators.slice();
+      news.forEach((op) => {
+        if (op.rarity >= 4) {
+          op.elite = value;
+        } else if (op.rarity === 3) {
+          op.elite = value >= 2 ? 1 : value;
+        }
+      });
+      updateOperators(news);
+    }
+    setEleteClass(value);
+  };
+  const renderMenuItem = (rarity) => {
+    const limit = [-1, 0, 0, 1, 2, 2, 2];
+    const indexes = rarity ? [...Array(limit[rarity] + 1).keys()] : [];
+    return indexes.map((index) => {
+      return (
+        <MenuItem value={index} key={index}>
+          {ELITECLASS_NAME[index]}
+        </MenuItem>
+      );
+    });
   };
   return (
     <TableContainer>
@@ -156,10 +183,16 @@ const OperatorTable = (props) => {
               NAME
             </TableCell>
             <TableCell className={classes.headerCell} style={{ width: "2em" }}>
-              RARITY
+              <Hidden xsDown>RARITY</Hidden>
+              <Hidden smUp>R</Hidden>
             </TableCell>
             <TableCell className={classes.headerCell} style={{ width: "3em" }}>
-              ELITE
+              <Select disableUnderline value={eleteClass} style={{ fontSize: "0.875rem" }} onChange={onHeaderEliteClassChange}>
+                <MenuItem value={-1} key={-1}>
+                  昇進
+                </MenuItem>
+                {renderMenuItem(6)}
+              </Select>
             </TableCell>
             <TableCell className={classes.headerCell} style={{ width: "4em" }}>
               SPEED
@@ -185,25 +218,17 @@ const OperatorTable = (props) => {
                 <TableCell className={classes.mainCell}>{op.rarity}</TableCell>
                 <TableCell className={classes.mainCell}>
                   <Select disableUnderline style={{ fontSize: "0.875rem" }} value={op.elite} onChange={(e) => onEliteClassChange(i, e)}>
-                    <MenuItem value={0} key={0}>
-                      E0
-                    </MenuItem>
-                    <MenuItem value={1} key={1}>
-                      E1
-                    </MenuItem>
-                    <MenuItem value={2} key={2}>
-                      E2
-                    </MenuItem>
+                    {renderMenuItem(op.rarity)}
                   </Select>
                 </TableCell>
                 <TableCell className={classes.mainCell}>+{op.speed}%</TableCell>
                 <TableCell className={classes.mainCell} style={{ paddingRight: "0px" }}>
                   <Hidden xsDown>{op.skills[op.elite].description}</Hidden>
                   <Hidden smUp>
-                    <Tooltip title={op.skills[op.elite].description} TransitionComponent={Zoom} arrow placement="bottom">
-                      <Button style={{ minWidth: "1em" }}>
+                    <Tooltip title={op.skills[op.elite].description} TransitionComponent={Zoom} arrow placement="bottom" leaveTouchDelay={3000} enterTouchDelay={50}>
+                      <IconButton size="small" style={{ minWidth: "1em" }}>
                         <MoreVertIcon color="action" />
-                      </Button>
+                      </IconButton>
                     </Tooltip>
                   </Hidden>
                 </TableCell>
@@ -232,7 +257,7 @@ const Page = (props) => {
     const selections = ops.filter((op) => op.checked).slice();
     selections.sort((a, b) => calc(b) - calc(a));
 
-    const labels = selections.map((op) => op.name);
+    const labels = selections.map((op) => `${op.name} [${ELITECLASS_NAME[op.elite]}]`);
     const chartData = {
       labels: labels,
       datasets: [
@@ -293,12 +318,12 @@ const Page = (props) => {
     <main>
       <Container maxWidth="lg" className={classes.mainContainer}>
         <div style={{ marginBottom: "20px" }}>hoge hoge foo</div>
-        <div style={{ marginBottom: "20px" }}>
+        <Paper variant="outlined" style={{ padding: "10px", marginBottom: "20px" }}>
           <HorizontalBar ref={chartReference} data={charData} />
-        </div>
-        <div>
+        </Paper>
+        <Paper variant="outlined" style={{ padding: "10px 5px 30px 5px", marginBottom: "20px" }}>
           <OperatorTable classes={classes} operators={operators} onOperatorsChange={(ops) => handleOperatorsChange(ops)} />
-        </div>
+        </Paper>
       </Container>
     </main>
   );
