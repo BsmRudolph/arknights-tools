@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkarknights_tools=self.webpackChunkarknights_tools||[]).push([[678],{7704:function(e,t,l){l.r(t);var n=l(5444),r=l(7294);t.default=function(){return r.createElement("main",null,r.createElement("title",null,"Home Page"),r.createElement("div",null,r.createElement(n.Link,{to:"/clue-search-speed-meter"},"clue search speed meter")))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-b7525cdf1b3eaca4a926.js.map
