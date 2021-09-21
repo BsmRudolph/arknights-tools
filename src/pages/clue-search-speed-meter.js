@@ -164,7 +164,9 @@ const OperatorTable = (props) => {
             <TableCell className={classes.headerCell} style={{ width: "4em" }}>
               SPEED
             </TableCell>
-            <TableCell className={classes.headerCell}>SKILL</TableCell>
+            <TableCell className={classes.headerCell} style={{ paddingRight: "0px" }}>
+              <Hidden xsDown>SKILL</Hidden>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -216,6 +218,7 @@ const OperatorTable = (props) => {
 
 const Page = (props) => {
   const chartReference = React.useRef();
+  const [savedata, setSavedata] = React.useState(null);
   const { classes, data } = props;
 
   const createChartData = (ops) => {
@@ -278,8 +281,12 @@ const Page = (props) => {
     });
     return ops;
   };
-  const saveddata = localStorage.getItem(APPKEY);
-  const operators = loadOperators(saveddata);
+
+  React.useEffect(() => {
+    setSavedata(localStorage.getItem(APPKEY));
+  }, [setSavedata]);
+
+  const operators = loadOperators(savedata);
   const charData = createChartData(operators);
 
   return (
@@ -313,9 +320,6 @@ export const query = graphql`
           value
         }
       }
-    }
-    siteBuildMetadata {
-      buildTime(formatString: "yyyyMMddHHmmss")
     }
   }
 `;
