@@ -75,7 +75,7 @@
       { "value": 20, "description": "incease seach speed (45%)" }
     ],
     "color": "#9786BB"
-  }  ,
+  },
   {
     "name": "12f",
     "rarity": 2,
@@ -262,5 +262,49 @@
       { "value": 0, "description": "incease seach speed (45%)" }
     ],
     "color": "#168BBE"
+  },
+  {
+    "name": "normal r3",
+    "rarity": 3,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "-" },
+      { "value": 0, "description": "-" },
+      { "value": 0, "description": "-" }
+    ],
+    "color": "#EEE"
+  },
+  {
+    "name": "normal r4",
+    "rarity": 4,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "-" },
+      { "value": 0, "description": "-" },
+      { "value": 0, "description": "-" }
+    ],
+    "color": "#EEE"
+  },
+  {
+    "name": "normal r5",
+    "rarity": 5,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "-" },
+      { "value": 0, "description": "-" },
+      { "value": 0, "description": "-" }
+    ],
+    "color": "#EEE"
+  },
+  {
+    "name": "normal r6",
+    "rarity": 6,
+    "elite": 0,
+    "skills": [
+      { "value": 0, "description": "-" },
+      { "value": 0, "description": "-" },
+      { "value": 0, "description": "-" }
+    ],
+    "color": "#EEE"
   }
 ]

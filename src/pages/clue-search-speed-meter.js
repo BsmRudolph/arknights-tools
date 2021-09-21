@@ -3,23 +3,51 @@ import { graphql } from "gatsby";
 import { Bar } from "react-chartjs-2";
 import { withStyles } from "@material-ui/core/styles";
 import { Container, Hidden, Checkbox, Select, MenuItem, TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import { Tooltip } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+import { Zoom } from "@material-ui/core";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 import * as Utils from "../commons/utils";
 
 const VERSION = "20210917.175103";
 const APPKEY = "clue-search-speed-meter";
 
 const styles = (theme) => ({
+  mainContainer: {
+    [theme.breakpoints.down("xs")]: {
+      padding: "5px",
+    },
+  },
   mainRow: {
     [theme.breakpoints.down("xs")]: {
-      "& td": {
-        borderBottom: "none",
-      },
+      "& td": {},
     },
   },
   subRow: {
     display: "none",
     [theme.breakpoints.down("xs")]: {
       display: "table-row",
+    },
+  },
+  mainCell: {
+    [theme.breakpoints.down("xs")]: {
+      padding: "4px 4px 4px 8px",
+    },
+  },
+  checkboxCell: {
+    width: "1em",
+    padding: "0px 10px",
+    [theme.breakpoints.down("xs")]: {
+      padding: "0px 0px 0px 0px",
+    },
+  },
+  headerCell: {
+    [theme.breakpoints.down("xs")]: {
+      padding: "4px 4px 8px 0px",
+      verticalAlign: "top",
+      textAlign: "center",
+      writingMode: "vertical-lr",
     },
   },
 });
@@ -57,15 +85,15 @@ const options = {
   scaleShowValues: true,
   scales: {
     yAxes: {
-        ticks: {
-          stepSize: 1,
-          autoSkip: false
-        },
-        scaleLabel: {
-          display: true,
-        }
-      }
-  },  
+      ticks: {
+        stepSize: 1,
+        autoSkip: false,
+      },
+      scaleLabel: {
+        display: true,
+      },
+    },
+  },
 
   elements: {
     bar: {
@@ -77,7 +105,7 @@ const options = {
 const HorizontalBar = React.forwardRef((props, ref) => {
   const { data } = props;
   return (
-    <div style={{ height: "50vh" }}>
+    <div style={{ height: "60vh" }}>
       <div style={{ position: "relative", width: "100%", height: "100%" }}>
         <Bar ref={ref} data={data} options={options} />
       </div>
@@ -86,8 +114,8 @@ const HorizontalBar = React.forwardRef((props, ref) => {
 });
 
 const OperatorTable = (props) => {
-  const [operators, setOperators] = React.useState(props.operators);
   const { classes } = props;
+  const [operators, setOperators] = React.useState(props.operators);
 
   const updateOperators = (ops) => {
     setOperators(ops);
@@ -116,35 +144,45 @@ const OperatorTable = (props) => {
     news.forEach((op) => (op.checked = e.target.checked));
     updateOperators(news);
   };
-
   return (
     <TableContainer>
-      <Table area-label="table of operaters">
+      <Table size="small" area-label="table of operaters">
         <TableHead>
           <TableRow>
-            <TableCell padding="checkbox">
-              <Checkbox color="primary" checked={operators.every((op) => op.checked)} onChange={onHeaderSelectionChange} inputProps={{ "aria-label": "select all operators" }} />
+            <TableCell className={classes.checkboxCell}>
+              <Checkbox color="default" checked={operators.every((op) => op.checked)} onChange={onHeaderSelectionChange} inputProps={{ "aria-label": "select all operators" }} />
             </TableCell>
-            <TableCell>NAME</TableCell>
-            <TableCell>RARITY</TableCell>
-            <TableCell>ELITE</TableCell>
-            <TableCell>SPEED</TableCell>
-            <Hidden xsDown>
-              <TableCell className="hidden-xs">SKILL</TableCell>
-            </Hidden>
+            <TableCell className={classes.headerCell} style={{ width: "15em" }}>
+              NAME
+            </TableCell>
+            <TableCell className={classes.headerCell} style={{ width: "2em" }}>
+              RARITY
+            </TableCell>
+            <TableCell className={classes.headerCell} style={{ width: "3em" }}>
+              ELITE
+            </TableCell>
+            <TableCell className={classes.headerCell} style={{ width: "4em" }}>
+              SPEED
+            </TableCell>
+            <TableCell className={classes.headerCell}>SKILL</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {operators.map((op, i) => (
             <React.Fragment key={i}>
               <TableRow className={classes.mainRow}>
-                <TableCell padding="checkbox">
-                  <Checkbox color="primary" checked={op.checked} onChange={(e) => onSelectionChange(i, e)}></Checkbox>
+                <TableCell className={classes.checkboxCell}>
+                  <Checkbox color="default" checked={op.checked} onChange={(e) => onSelectionChange(i, e)}></Checkbox>
                 </TableCell>
-                <TableCell>{op.name}</TableCell>
-                <TableCell>{op.rarity}</TableCell>
-                <TableCell>
-                  <Select value={op.elite} onChange={(e) => onEliteClassChange(i, e)}>
+                <TableCell className={classes.mainCell}>
+                  <Grid container direction="row" alignItems="center">
+                    <div style={{ backgroundColor: op.color, width: "1em", height: "1em", display: "inline-block", marginRight: "0.5em" }}></div>
+                    {op.name}
+                  </Grid>
+                </TableCell>
+                <TableCell className={classes.mainCell}>{op.rarity}</TableCell>
+                <TableCell className={classes.mainCell}>
+                  <Select disableUnderline style={{ fontSize: "0.875rem" }} value={op.elite} onChange={(e) => onEliteClassChange(i, e)}>
                     <MenuItem value={0} key={0}>
                       E0
                     </MenuItem>
@@ -156,15 +194,16 @@ const OperatorTable = (props) => {
                     </MenuItem>
                   </Select>
                 </TableCell>
-                <TableCell>{op.speed}% up</TableCell>
-                <Hidden xsDown>
-                  <TableCell>{op.skills[op.elite].description}</TableCell>
-                </Hidden>
-              </TableRow>
-              <TableRow className={classes.subRow}>
-                <TableCell></TableCell>
-                <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={3}>
-                  {op.skills[op.elite].description}
+                <TableCell className={classes.mainCell}>+{op.speed}%</TableCell>
+                <TableCell className={classes.mainCell} style={{ paddingRight: "0px" }}>
+                  <Hidden xsDown>{op.skills[op.elite].description}</Hidden>
+                  <Hidden smUp>
+                    <Tooltip title={op.skills[op.elite].description} TransitionComponent={Zoom} arrow placement="bottom">
+                      <Button style={{ minWidth: "1em" }}>
+                        <MoreVertIcon color="action" />
+                      </Button>
+                    </Tooltip>
+                  </Hidden>
                 </TableCell>
               </TableRow>
             </React.Fragment>
@@ -181,7 +220,10 @@ const Page = (props) => {
 
   const createChartData = (ops) => {
     const calc = (op) => {
-      return rarityBonuses[op.rarity] + eliteBonuses[op.elite] + op.skills[op.elite].value;
+      const rarityBonus = rarityBonuses[op.rarity];
+      const eliteBonus = op.elite * 8;
+      const skillValue = op.skills[op.elite].value;
+      return rarityBonus + eliteBonus + skillValue;
     };
 
     const selections = ops.filter((op) => op.checked).slice();
@@ -226,7 +268,7 @@ const Page = (props) => {
       }
     }
 
-    const ops = data.allOperatorsJson.edges.map((d) => d.node);
+    const ops = data.allOperatorsJson.nodes; //edges.map((d) => d.node);
     ops.forEach((op) => {
       op.checked = true;
       op.elite = 0;
@@ -242,7 +284,7 @@ const Page = (props) => {
 
   return (
     <main>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className={classes.mainContainer}>
         <div style={{ marginBottom: "20px" }}>hoge hoge foo</div>
         <div style={{ marginBottom: "20px" }}>
           <HorizontalBar ref={chartReference} data={charData} />
@@ -260,18 +302,20 @@ export default withStyles(styles)(Page);
 export const query = graphql`
   query MyQuery {
     allOperatorsJson {
-      edges {
-        node {
-          id
-          skills {
-            description
-            value
-          }
-          rarity
-          name
-          color
+      nodes {
+        color
+        elite
+        id
+        name
+        rarity
+        skills {
+          description
+          value
         }
       }
+    }
+    siteBuildMetadata {
+      buildTime(formatString: "yyyyMMddHHmmss")
     }
   }
 `;
