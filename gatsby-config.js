@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/arknights-tools",
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "Arknights Tools",
