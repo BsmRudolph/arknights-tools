@@ -1,17 +1,13 @@
+import { Link } from "gatsby";
 import * as React from "react";
 
 const IndexPage = () => {
   return (
     <main>
       <title>Home Page</title>
-      <h1>
-        Congratulations
-        <br />
-        <span>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
+      <div>
+        <Link to="/clue-search-speed-meter">clue search speed meter</Link>
+      </div>
     </main>
   );
 };
