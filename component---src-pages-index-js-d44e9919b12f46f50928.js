@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkarknights_tools=self.webpackChunkarknights_tools||[]).push([[678],{7704:function(e,t,l){l.r(t);var n=l(5444),a=l(7294),r=l(4695);t.default=function(){return a.createElement("main",null,a.createElement(r.Z,{title:"Home"}),a.createElement("title",null,"Home Page"),a.createElement("div",null,a.createElement(n.Link,{to:"/clue-search-speed-list"},"手がかり捜索速度一覧")))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-d44e9919b12f46f50928.js.map
