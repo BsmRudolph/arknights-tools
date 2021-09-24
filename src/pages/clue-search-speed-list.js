@@ -7,9 +7,10 @@ import { Tooltip } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import { Zoom } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Head from "../components/head";
 import * as Utils from "../commons/utils";
 
-const VERSION = "20210921.175103";
+const VERSION = "20210921.175104";
 const APPKEY = "clue-search-speed-meter";
 const ELITECLASS_NAME = ["未昇進", "昇進１", "昇進２"];
 
@@ -313,11 +314,16 @@ const Page = (props) => {
 
   const operators = loadOperators(savedata);
   const charData = createChartData(operators);
-
+  const page = {
+    title: "手がかり捜索速度一覧",
+    image: "/images/clue.png",
+    description: "description",
+  };
   return (
     <main>
+      <Head title={page.title} description={page.description} image={page.image} />
       <Container maxWidth="lg" className={classes.mainContainer}>
-        <div style={{ marginBottom: "20px" }}>hoge hoge foo</div>
+        <div style={{ marginBottom: "20px" }}>{page.title}</div>
         <Paper variant="outlined" style={{ padding: "10px", marginBottom: "20px" }}>
           <HorizontalBar ref={chartReference} data={charData} />
         </Paper>
@@ -333,7 +339,7 @@ export default withStyles(styles)(Page);
 
 export const query = graphql`
   query MyQuery {
-    allOperatorsJson {
+    allOperatorsJson(sort: { fields: [rarity, name], order: [DESC, ASC] }) {
       nodes {
         color
         elite

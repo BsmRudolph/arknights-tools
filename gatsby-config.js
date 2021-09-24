@@ -1,8 +1,14 @@
 module.exports = {
   pathPrefix: "/arknights-tools",
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
     title: "Arknights Tools",
+    titleTemplate: "%s - Arknights Tools",
+    lang: "ja",
+    description: "アークナイツ用の便利ツール",
+    url: "https://BsmRudolph.github.io/arknights-tools",
+    siteUrl: "https://BsmRudolph.github.io/arknights-tools",
+    image: "/images/thumbnail.png",
+    twitterUsername: "@BsmRudolph",
   },
   plugins: [
     {
