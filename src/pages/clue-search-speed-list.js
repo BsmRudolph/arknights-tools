@@ -10,7 +10,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Head from "../components/head";
 import * as Utils from "../commons/utils";
 
-const VERSION = "20210921.175105";
+const VERSION = "20210921.17050501";
 const APPKEY = "clue-search-speed-meter";
 const ELITECLASS_NAME = ["未昇進", "昇進１", "昇進２"];
 
@@ -18,6 +18,13 @@ const styles = (theme) => ({
   mainContainer: {
     [theme.breakpoints.down("xs")]: {
       padding: "5px",
+    },
+  },
+  mainTable: {
+    "& .MuiTableCell-sizeSmall": {
+      "&:last-child": {
+        paddingRight: "0px",
+      },
     },
   },
   mainCell: {
@@ -30,9 +37,10 @@ const styles = (theme) => ({
   },
   skillCell: {
     minWidth: "40%",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       padding: "4px 4px 4px 8px",
       width: "1.0em",
+      textAlign: "right",
     },
     [theme.breakpoints.down(350)]: {
       fontSize: "10px",
@@ -60,14 +68,15 @@ const styles = (theme) => ({
   },
   horizontaBar: {
     minHeight: "500px",
+    height: "60vh",
     [theme.breakpoints.down("xs")]: {
-      height: "75vh",
+      //height: "75vh",
     },
   },
   operatorName: {
     whiteSpace: "nowrap",
-    [theme.breakpoints.down(430)]: {
-      width: "5.5em",
+    [theme.breakpoints.down("xs")]: {
+      width: "5.2em",
       maxWidth: "100%",
       overflow: "hidden",
       textOverflow: "ellipsis",
@@ -203,7 +212,7 @@ const OperatorTable = (props) => {
   };
   return (
     <TableContainer>
-      <Table size="small" area-label="table of operaters">
+      <Table size="small" area-label="table of operaters" className={classes.mainTable}>
         <TableHead>
           <TableRow>
             <TableCell className={classes.checkboxCell} style={{ width: "1em" }}>
@@ -213,8 +222,8 @@ const OperatorTable = (props) => {
               NAME
             </TableCell>
             <TableCell className={classes.headerCell}>
-              <Hidden xsDown>RARITY</Hidden>
-              <Hidden smUp>R</Hidden>
+              <Hidden smDown>RARITY</Hidden>
+              <Hidden mdUp>R</Hidden>
             </TableCell>
             <TableCell className={classes.headerCell}>
               <Select disableUnderline value={eleteClass} className={classes.eliteSelect} onChange={onHeaderEliteClassChange}>
@@ -225,7 +234,7 @@ const OperatorTable = (props) => {
               </Select>
             </TableCell>
             <TableCell className={classes.headerCell}>SPEED</TableCell>
-            <TableCell className={classes.skillCell} style={{ paddingRight: "0px" }}>
+            <TableCell className={classes.skillCell}>
               <Hidden smDown>SKILL</Hidden>
             </TableCell>
           </TableRow>
@@ -252,7 +261,7 @@ const OperatorTable = (props) => {
                   </Select>
                 </TableCell>
                 <TableCell className={classes.mainCell}>+{op.speed}%</TableCell>
-                <TableCell className={classes.skillCell} style={{ paddingRight: "0px" }}>
+                <TableCell className={classes.skillCell}>
                   <Hidden smDown>{op.skills[op.elite].description}</Hidden>
                   <Hidden mdUp>
                     <Tooltip title={op.skills[op.elite].description} TransitionComponent={Zoom} arrow placement="bottom" leaveTouchDelay={3000} enterTouchDelay={40}>
@@ -329,6 +338,7 @@ const Page = (props) => {
     ops.forEach((op) => {
       op.checked = true;
       op.elite = 0;
+      op.skills = op.skills.reception;
       op.speed = rarityBonuses[op.rarity] + eliteBonuses[op.elite] + op.skills[op.elite].value;
       op.backgroundColor = Utils.transparentize(op.color, 0.5);
       op.borderColor = op.color;
@@ -342,7 +352,7 @@ const Page = (props) => {
   const page = {
     title: "手がかり捜索速度一覧",
     image: "/images/clue.png",
-    description: "description",
+    description: "応接室に配置した場合のオペレータの手がかり捜索速度を補正込みでランク表示します",
   };
   return (
     <main>
@@ -364,16 +374,17 @@ export default withStyles(styles)(Page);
 
 export const query = graphql`
   query MyQuery {
-    allOperatorsJson(sort: { fields: [rarity, name], order: [DESC, ASC] }) {
+    allOperatorsJson(sort: { fields: [rarity, name], order: [DESC, ASC] }, filter: { skills: { reception: { elemMatch: { value: { ne: null } } } } }) {
       nodes {
-        color
-        elite
         id
+        color
         name
         rarity
         skills {
-          description
-          value
+          reception {
+            description
+            value
+          }
         }
       }
     }

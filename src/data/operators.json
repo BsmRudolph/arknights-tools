@@ -2,265 +2,346 @@
   {
     "name": "ギターノ",
     "rarity": 4,
-    "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)\nsearch clue 4 (lodos)" },
-      { "value": 25, "description": "incease seach speed (20%)" },
-      { "value": 25, "description": "incease seach speed (45%)" }
-    ],
-    "color": "#D2A9D2"
+    "color": "#D2A9D2",
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)\nsearch clue 4 (lodos)" },
+        { "value": 25, "description": "incease seach speed (20%)" },
+        { "value": 25, "description": "incease seach speed (45%)" }
+      ]
+    }
   },
   {
     "name": "チェン",
     "rarity": 6,
     "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)" },
-      { "value": 0, "description": "incease seach speed (20%)" },
-      { "value": 25, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)" },
+        { "value": 0, "description": "incease seach speed (20%)" },
+        { "value": 25, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#5C649E"
   },
   {
     "name": "アステシア",
     "rarity": 5,
     "elite": 0,
-    "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 25, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 10, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 25, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#0886CC"
   },
   {
     "name": "レッド",
     "rarity": 5,
     "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)" },
-      { "value": 0, "description": "incease seach speed (20%)" },
-      { "value": 25, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)" },
+        { "value": 0, "description": "incease seach speed (20%)" },
+        { "value": 25, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#CB3C45"
   },
   {
     "name": "シラユキ",
     "rarity": 4,
     "elite": 0,
-    "skills": [
-      { "value": 20, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 20, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 20, "description": "incease seach speed (10%)" },
+        { "value": 20, "description": "incease seach speed (20%)" },
+        { "value": 20, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#CDD5D5"
   },
   {
     "name": "メイ",
     "rarity": 4,
     "elite": 0,
-    "skills": [
-      { "value": 20, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 20, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 20, "description": "incease seach speed (10%)" },
+        { "value": 20, "description": "incease seach speed (20%)" },
+        { "value": 20, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#C9A9AC"
   },
   {
     "name": "ロープ",
     "rarity": 4,
     "elite": 0,
-    "skills": [
-      { "value": 20, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 20, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 20, "description": "incease seach speed (10%)" },
+        { "value": 20, "description": "incease seach speed (20%)" },
+        { "value": 20, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#9786BB"
   },
   {
     "name": "12F",
     "rarity": 2,
     "elite": 0,
-    "skills": [
-      { "value": 20, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 20, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 20, "description": "incease seach speed (10%)" },
+        { "value": 20, "description": "incease seach speed (20%)" },
+        { "value": 20, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#FBEBD2"
   },
   {
     "name": "ウタゲ",
     "rarity": 4,
     "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 20, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)" },
+        { "value": 20, "description": "incease seach speed (20%)" },
+        { "value": 20, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#C870C4"
   },
   {
     "name": "ジャッキー",
     "rarity": 4,
     "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)" },
-      { "value": 20, "description": "incease seach speed (20%)" },
-      { "value": 20, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)" },
+        { "value": 20, "description": "incease seach speed (20%)" },
+        { "value": 20, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#45454E"
   },
   {
     "name": "エアースカーベ",
     "rarity": 5,
     "elite": 0,
-    "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 20, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 10, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 20, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#F5C150"
   },
   {
     "name": "アンジェリーナ",
     "rarity": 6,
     "elite": 0,
-    "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 10, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 10, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 10, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#A4150C"
   },
   {
     "name": "サリア",
     "rarity": 6,
     "elite": 0,
-    "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 10, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 10, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 10, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#B6AEAA"
   },
   {
     "name": "モスティマ",
     "rarity": 6,
     "elite": 0,
-    "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 10, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 10, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 10, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#1B389D"
   },
   {
     "name": "インドラ",
     "rarity": 5,
     "elite": 0,
-    "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 10, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 10, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 10, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#616161"
   },
   {
     "name": "フランカ",
     "rarity": 5,
     "elite": 0,
-    "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 10, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 10, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 10, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#A86F5E"
   },
   {
     "name": "ブリーズ",
     "rarity": 5,
     "elite": 0,
-    "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 10, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 10, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 10, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#DDCCA3"
   },
   {
     "name": "ファイヤーウォッチ",
     "rarity": 5,
     "elite": 0,
-    "skills": [
-      { "value": 10, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 20, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 10, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 20, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#887850"
   },
   {
     "name": "マウンテン",
     "rarity": 6,
     "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)" },
-      { "value": 0, "description": "incease seach speed (20%)" },
-      { "value": 0, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)" },
+        { "value": 0, "description": "incease seach speed (20%)" },
+        { "value": 0, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#857C7D"
   },
   {
     "name": "ジェシカ",
     "rarity": 4,
     "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 10, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 10, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#7E86B6"
   },
   {
     "name": "アブサント",
     "rarity": 4,
     "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)" },
-      { "value": 0, "description": "incease seach speed (20%)" },
-      { "value": 0, "description": "incease seach speed (45%)" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)" },
+        { "value": 0, "description": "incease seach speed (20%)" },
+        { "value": 0, "description": "incease seach speed (45%)" }
+      ]
+    },
     "color": "#B2AA99"
   },
   {
     "name": "イースチナ",
     "rarity": 5,
     "elite": 0,
-    "skills": [
-      { "value": 0, "description": "-" },
-      { "value": 0, "description": "-" },
-      { "value": 10, "description": "応接室配置時、手がかり捜索速度+10%、ウルサス学生自治団の手がかり(4)を入手しやすい。" }
-    ],
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "-" },
+        { "value": 0, "description": "-" },
+        { "value": 10, "description": "応接室配置時、手がかり捜索速度+10%、ウルサス学生自治団の手がかり(4)を入手しやすい。" }
+      ]
+    },
     "color": "#DDEFDF"
   },
   {
     "name": "クーリエ",
     "rarity": 4,
-    "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)" },
-      { "value": 10, "description": "incease seach speed (20%)" },
-      { "value": 10, "description": "incease seach speed (45%)" }
-    ],
-    "color": "#AE0908"
+    "color": "#AE0908",
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 10, "description": "incease seach speed (45%)" }
+      ],
+      "vangard": [
+        {
+          "name": "",
+          "description": "incease seach speed (10%)",
+          "initialSp": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "requiredSp": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "duration": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        },
+        {
+          "name": "",
+          "description": "incease seach speed (10%)",
+          "initialSp": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "requiredSp": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "duration": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        }
+      ]
+    }
   },
   {
     "name": "エリジウム",
     "rarity": 5,
-    "elite": 0,
-    "skills": [
-      { "value": 0, "description": "incease seach speed (10%)" },
-      { "value": 0, "description": "incease seach speed (20%)" },
-      { "value": 0, "description": "incease seach speed (45%)" }
-    ],
-    "color": "#168BBE"
+    "color": "#168BBE",
+    "skills": {
+      "reception": [
+        { "value": 0, "description": "incease seach speed (10%)" },
+        { "value": 10, "description": "incease seach speed (20%)" },
+        { "value": 10, "description": "incease seach speed (45%)" }
+      ],
+      "vangard": [
+        {
+          "name": "",
+          "description": "incease seach speed (10%)",
+          "initialSp": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "requiredSp": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "duration": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        },
+        {
+          "name": "",
+          "description": "incease seach speed (10%)",
+          "initialSp": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "requiredSp": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "duration": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+          "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        }
+      ]
+    }
   }
 ]
