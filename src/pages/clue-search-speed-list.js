@@ -10,7 +10,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Head from "../components/head";
 import * as Utils from "../commons/utils";
 
-const VERSION = "20210921.175104";
+const VERSION = "20210921.175105";
 const APPKEY = "clue-search-speed-meter";
 const ELITECLASS_NAME = ["未昇進", "昇進１", "昇進２"];
 
@@ -36,6 +36,13 @@ const styles = (theme) => ({
       padding: "4px 4px 4px 8px",
     },
   },
+  skillCell: {
+    minWidth: "40%",
+    [theme.breakpoints.down("xs")]: {
+      padding: "4px 4px 4px 8px",
+      width: "1.0em",
+    },
+  },
   checkboxCell: {
     width: "1em",
     padding: "0px 10px",
@@ -48,6 +55,21 @@ const styles = (theme) => ({
       padding: "4px 4px 8px 0px",
       verticalAlign: "top",
       textAlign: "center",
+    },
+  },
+  horizontaBar: {
+    height: "60vh",
+    [theme.breakpoints.down("xs")]: {
+      height: "75vh",
+    },
+  },
+  operatorName: {
+    whiteSpace: "nowrap",
+    [theme.breakpoints.down("xs")]: {
+      width: "5.5em",
+      maxWidth: "100%",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
     },
   },
 });
@@ -103,9 +125,9 @@ const options = {
 };
 
 const HorizontalBar = React.forwardRef((props, ref) => {
-  const { data } = props;
+  const { data, classes } = props;
   return (
-    <div style={{ height: "80vh" }}>
+    <div className={classes.horizontaBar}>
       <div style={{ position: "relative", width: "100%", height: "100%" }}>
         <Bar ref={ref} data={data} options={options} />
       </div>
@@ -177,17 +199,17 @@ const OperatorTable = (props) => {
       <Table size="small" area-label="table of operaters">
         <TableHead>
           <TableRow>
-            <TableCell className={classes.checkboxCell}>
+            <TableCell className={classes.checkboxCell} style={{ width: "1em" }}>
               <Checkbox color="default" checked={operators.every((op) => op.checked)} onChange={onHeaderSelectionChange} inputProps={{ "aria-label": "select all operators" }} />
             </TableCell>
-            <TableCell className={classes.headerCell} style={{ width: "15em" }}>
+            <TableCell className={classes.headerCell} style={{ width: "auto" }}>
               NAME
             </TableCell>
-            <TableCell className={classes.headerCell} style={{ width: "2em" }}>
+            <TableCell className={classes.headerCell}>
               <Hidden xsDown>RARITY</Hidden>
               <Hidden smUp>R</Hidden>
             </TableCell>
-            <TableCell className={classes.headerCell} style={{ width: "3em" }}>
+            <TableCell className={classes.headerCell}>
               <Select disableUnderline value={eleteClass} style={{ fontSize: "0.875rem" }} onChange={onHeaderEliteClassChange}>
                 <MenuItem value={-1} key={-1}>
                   昇進
@@ -195,10 +217,8 @@ const OperatorTable = (props) => {
                 {renderMenuItem(6)}
               </Select>
             </TableCell>
-            <TableCell className={classes.headerCell} style={{ width: "4em" }}>
-              SPEED
-            </TableCell>
-            <TableCell className={classes.headerCell} style={{ paddingRight: "0px" }}>
+            <TableCell className={classes.headerCell}>SPEED</TableCell>
+            <TableCell className={classes.skillCell} style={{ paddingRight: "0px" }}>
               <Hidden xsDown>SKILL</Hidden>
             </TableCell>
           </TableRow>
@@ -211,10 +231,12 @@ const OperatorTable = (props) => {
                   <Checkbox color="default" checked={op.checked} onChange={(e) => onSelectionChange(i, e)}></Checkbox>
                 </TableCell>
                 <TableCell className={classes.mainCell}>
-                  <Grid container direction="row" alignItems="center">
-                    <div style={{ backgroundColor: op.color, width: "1em", height: "1em", display: "inline-block", marginRight: "0.5em" }}></div>
-                    {op.name}
-                  </Grid>
+                  <Tooltip title={op.name} TransitionComponent={Zoom} arrow placement="bottom" leaveTouchDelay={3000} enterTouchDelay={40} disableHoverListener>
+                    <Grid container direction="row" alignItems="center" wrap="nowrap">
+                      <div style={{ backgroundColor: op.color, width: "1em", height: "1em", display: "inline-block", marginRight: "0.5em" }}></div>
+                      <span className={classes.operatorName}>{op.name}</span>
+                    </Grid>
+                  </Tooltip>
                 </TableCell>
                 <TableCell className={classes.mainCell}>{op.rarity}</TableCell>
                 <TableCell className={classes.mainCell}>
@@ -223,11 +245,11 @@ const OperatorTable = (props) => {
                   </Select>
                 </TableCell>
                 <TableCell className={classes.mainCell}>+{op.speed}%</TableCell>
-                <TableCell className={classes.mainCell} style={{ paddingRight: "0px" }}>
+                <TableCell className={classes.skillCell} style={{ paddingRight: "0px" }}>
                   <Hidden xsDown>{op.skills[op.elite].description}</Hidden>
                   <Hidden smUp>
-                    <Tooltip title={op.skills[op.elite].description} TransitionComponent={Zoom} arrow placement="bottom" leaveTouchDelay={3000} enterTouchDelay={50}>
-                      <IconButton size="small" style={{ minWidth: "1em" }}>
+                    <Tooltip title={op.skills[op.elite].description} TransitionComponent={Zoom} arrow placement="bottom" leaveTouchDelay={3000} enterTouchDelay={40}>
+                      <IconButton size="small">
                         <MoreVertIcon color="action" />
                       </IconButton>
                     </Tooltip>
@@ -244,7 +266,7 @@ const OperatorTable = (props) => {
 
 const Page = (props) => {
   const chartReference = React.useRef();
-  const [savedata, setSavedata] = React.useState(null);
+  const [savedata, setSavedata] = React.useState(localStorage.getItem(APPKEY));
   const { classes, data } = props;
 
   const createChartData = (ops) => {
@@ -308,9 +330,9 @@ const Page = (props) => {
     return ops;
   };
 
-  React.useEffect(() => {
-    setSavedata(localStorage.getItem(APPKEY));
-  }, [setSavedata]);
+  //React.useEffect(() => {
+  //  setSavedata(localStorage.getItem(APPKEY));
+  //}, [setSavedata]);
 
   const operators = loadOperators(savedata);
   const charData = createChartData(operators);
@@ -325,7 +347,7 @@ const Page = (props) => {
       <Container maxWidth="lg" className={classes.mainContainer}>
         <div style={{ marginBottom: "20px" }}>{page.title}</div>
         <Paper variant="outlined" style={{ padding: "10px", marginBottom: "20px" }}>
-          <HorizontalBar ref={chartReference} data={charData} />
+          <HorizontalBar classes={classes} ref={chartReference} data={charData} />
         </Paper>
         <Paper variant="outlined" style={{ padding: "10px 5px 30px 5px", marginBottom: "20px" }}>
           <OperatorTable classes={classes} operators={operators} onOperatorsChange={(ops) => handleOperatorsChange(ops)} />
