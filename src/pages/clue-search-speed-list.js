@@ -10,7 +10,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Head from "../components/head";
 import * as Utils from "../commons/utils";
 
-const VERSION = "20210921.17050501";
+const VERSION = "20210921.21260501";
 const APPKEY = "clue-search-speed-meter";
 const ELITECLASS_NAME = ["未昇進", "昇進１", "昇進２"];
 
@@ -194,6 +194,7 @@ const OperatorTable = (props) => {
         } else if (op.rarity === 3) {
           op.elite = value >= 2 ? 1 : value;
         }
+        op.speed = rarityBonuses[op.rarity] + eliteBonuses[op.elite] + op.skills[op.elite].value;
       });
       updateOperators(news);
     }
@@ -262,9 +263,9 @@ const OperatorTable = (props) => {
                 </TableCell>
                 <TableCell className={classes.mainCell}>+{op.speed}%</TableCell>
                 <TableCell className={classes.skillCell}>
-                  <Hidden smDown>{op.skills[op.elite].description}</Hidden>
+                  <Hidden smDown>{op.skills[op.elite].description || "なし"}</Hidden>
                   <Hidden mdUp>
-                    <Tooltip title={op.skills[op.elite].description} TransitionComponent={Zoom} arrow placement="bottom" leaveTouchDelay={3000} enterTouchDelay={40}>
+                    <Tooltip title={op.skills[op.elite].description || "なし"} TransitionComponent={Zoom} arrow placement="bottom" leaveTouchDelay={3000} enterTouchDelay={40}>
                       <IconButton size="small">
                         <MoreVertIcon color="action" />
                       </IconButton>

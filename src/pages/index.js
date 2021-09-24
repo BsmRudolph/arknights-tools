@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { withPrefix } from 'gatsby'
 import { Card, CardActionArea, CardMedia, CardContent } from "@material-ui/core";
 import { Container } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
@@ -14,7 +15,7 @@ const IndexPage = () => {
 
         <Card style={{ maxWidth: 345 }}>
           <CardActionArea component={Link} to="/clue-search-speed-list">
-            <CardMedia component="img" height="140" image="/images/clue.png" alt="searching clue" />
+            <CardMedia component="img" height="140" image={withPrefix("/images/clue.png")} alt="searching clue" />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div" color="primary">
                 手がかり捜索速度一覧

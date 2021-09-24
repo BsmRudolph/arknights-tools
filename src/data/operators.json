@@ -5,9 +5,9 @@
     "color": "#D2A9D2",
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)\nsearch clue 4 (lodos)" },
-        { "value": 25, "description": "incease seach speed (20%)" },
-        { "value": 25, "description": "incease seach speed (45%)" }
+        { "value": 0, "description": "" },
+        { "name": "占い", "value": 25, "description": "手がかり捜索速度+25%" },
+        { "name": "占い", "value": 25, "description": "手がかり捜索速度+25%" }
       ]
     }
   },
@@ -17,9 +17,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)" },
-        { "value": 0, "description": "incease seach speed (20%)" },
-        { "value": 25, "description": "incease seach speed (45%)" }
+        { "value": 0, "description": "" },
+        { "value": 0, "description": "" },
+        { "name": "警視", "value": 25, "description": "手がかり捜索速度+25%" }
       ]
     },
     "color": "#5C649E"
@@ -30,9 +30,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 10, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 25, "description": "incease seach speed (45%)" }
+        { "name": "情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name": "情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name": "占星学", "value": 25, "description": "手がかり捜索速度+25%" }
       ]
     },
     "color": "#0886CC"
@@ -43,9 +43,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)" },
-        { "value": 0, "description": "incease seach speed (20%)" },
-        { "value": 25, "description": "incease seach speed (45%)" }
+        { "value": 0, "description": "" },
+        { "value": 0, "description": "" },
+        { "name": "追跡者", "value": 25, "description": "手がかり捜索速度+25%" }
       ]
     },
     "color": "#CB3C45"
@@ -56,9 +56,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 20, "description": "incease seach speed (10%)" },
-        { "value": 20, "description": "incease seach speed (20%)" },
-        { "value": 20, "description": "incease seach speed (45%)" }
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" }
       ]
     },
     "color": "#CDD5D5"
@@ -69,9 +69,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 20, "description": "incease seach speed (10%)" },
-        { "value": 20, "description": "incease seach speed (20%)" },
-        { "value": 20, "description": "incease seach speed (45%)" }
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"皇室探偵(自称)", "value": 20, "description": "ペンギン急便の手がかり(2)を入手しやすい" },
+        { "name":"皇室探偵(自称)", "value": 20, "description": "ペンギン急便の手がかり(2)を入手しやすい" }
       ]
     },
     "color": "#C9A9AC"
@@ -82,9 +82,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 20, "description": "incease seach speed (10%)" },
-        { "value": 20, "description": "incease seach speed (20%)" },
-        { "value": 20, "description": "incease seach speed (45%)" }
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" }
       ]
     },
     "color": "#9786BB"
@@ -95,9 +95,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 20, "description": "incease seach speed (10%)" },
-        { "value": 20, "description": "incease seach speed (20%)" },
-        { "value": 20, "description": "incease seach speed (45%)" }
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" }
       ]
     },
     "color": "#FBEBD2"
@@ -108,9 +108,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)" },
-        { "value": 20, "description": "incease seach speed (20%)" },
-        { "value": 20, "description": "incease seach speed (45%)" }
+        { "value": 0, "description": "" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" }
       ]
     },
     "color": "#C870C4"
@@ -121,9 +121,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)" },
-        { "value": 20, "description": "incease seach speed (20%)" },
-        { "value": 20, "description": "incease seach speed (45%)" }
+        { "value": 0, "description": "" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" }
       ]
     },
     "color": "#45454E"
@@ -134,9 +134,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 10, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 20, "description": "incease seach speed (45%)" }
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" }
       ]
     },
     "color": "#F5C150"
@@ -147,9 +147,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 10, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 10, "description": "incease seach speed (45%)" }
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"トランスポーター・ロドス", "value": 10, "description": "手がかり捜索速度+10%、ロドス製薬の手がかりを入手しやすい" },
+        { "name":"トランスポーター・ロドス", "value": 10, "description": "手がかり捜索速度+10%、ロドス製薬の手がかりを入手しやすい" }
       ]
     },
     "color": "#A4150C"
@@ -160,9 +160,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 10, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 10, "description": "incease seach speed (45%)" }
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"ウォッチマン", "value": 10, "description": "手がかり捜索速度+10%、ライン生命の手がかりを入手しやすい（勤務時間が確立に影響する）" },
+        { "name":"ウォッチマン", "value": 10, "description": "手がかり捜索速度+10%、ライン生命の手がかりを入手しやすい（勤務時間が確立に影響する）" }
       ]
     },
     "color": "#B6AEAA"
@@ -173,9 +173,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 10, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 10, "description": "incease seach speed (45%)" }
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"トランスポーター・ペンギン急便", "value": 10, "description": "手がかり捜索速度+10%、ペンギン急便製薬の手がかりを入手しやすい" },
+        { "name":"トランスポーター・ペンギン急便", "value": 10, "description": "手がかり捜索速度+10%、ペンギン急便製薬の手がかりを入手しやすい" }
       ]
     },
     "color": "#1B389D"
@@ -186,9 +186,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 10, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 10, "description": "incease seach speed (45%)" }
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"メッセンジャー", "value": 10, "description": "手がかり捜索速度+10%、グラスゴーギャングの手がかりを入手しやすい" }
       ]
     },
     "color": "#616161"
@@ -199,9 +199,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 10, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 10, "description": "incease seach speed (45%)" }
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"B.P.R.S", "value": 10, "description": "手がかり捜索速度+10%、BSWの手がかり（3）を入手しやすい（勤務時間が確率に影響する）" }
       ]
     },
     "color": "#A86F5E"
@@ -212,9 +212,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 10, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 10, "description": "incease seach speed (45%)" }
+        { "name":"探索収集", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"探索収集", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"没落貴族", "value": 10, "description": "手がかり捜索速度+10%、グラスゴーギャングの手がかり（5）を入手しやすい" }
       ]
     },
     "color": "#DDCCA3"
@@ -225,9 +225,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 10, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 20, "description": "incease seach speed (45%)" }
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"情報収集α", "value": 10, "description": "手がかり捜索速度+10%" },
+        { "name":"情報収集β", "value": 20, "description": "手がかり捜索速度+20%" }
       ]
     },
     "color": "#887850"
@@ -238,9 +238,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)" },
-        { "value": 0, "description": "incease seach speed (20%)" },
-        { "value": 0, "description": "incease seach speed (45%)" }
+        { "value": 0, "description": "" },
+        { "value": 0, "description": "" },
+        { "name": "クルビア史", "value": 0, "description": "捜索で入手した手がかりがライン生命でない時、ライン生命の手がかりを入手する確率が更に増加（勤務時間が確率に影響する）" }
       ]
     },
     "color": "#857C7D"
@@ -251,9 +251,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 10, "description": "incease seach speed (45%)" }
+        { "value": 0, "description": "0" },
+        { "name":"連絡員", "value": 10, "description": "手がかり捜索速度+10%、BSWの手がかり(3)を入手しやすい（勤務時間が確率に影響する）" },
+        { "name":"連絡員", "value": 10, "description": "手がかり捜索速度+10%、BSWの手がかり(3)を入手しやすい（勤務時間が確率に影響する）" }
       ]
     },
     "color": "#7E86B6"
@@ -264,9 +264,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)" },
-        { "value": 0, "description": "incease seach speed (20%)" },
-        { "value": 0, "description": "incease seach speed (45%)" }
+        { "name":"秘密調査", "value": 0, "description": "ウルサス学生自治団の手がかり(4)を入手しやすい" },
+        { "name":"秘密調査", "value": 0, "description": "ウルサス学生自治団の手がかり(4)を入手しやすい" },
+        { "name":"選別", "value": 0, "description": "応接室配置後、捜索された手がかりがウルサス学生自治団でなかった時、ウルサス学生自治団の入手率が更に増加する" }
       ]
     },
     "color": "#B2AA99"
@@ -277,9 +277,9 @@
     "elite": 0,
     "skills": {
       "reception": [
-        { "value": 0, "description": "-" },
-        { "value": 0, "description": "-" },
-        { "value": 10, "description": "応接室配置時、手がかり捜索速度+10%、ウルサス学生自治団の手がかり(4)を入手しやすい。" }
+        { "value": 0, "description": "" },
+        { "value": 0, "description": "" },
+        { "name": "参謀", "value": 10, "description": "手がかり捜索速度+10%、ウルサス学生自治団の手がかり(4)を入手しやすい" }
       ]
     },
     "color": "#DDEFDF"
@@ -290,9 +290,9 @@
     "color": "#AE0908",
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 10, "description": "incease seach speed (45%)" }
+        { "value": 0, "description": "" },
+        { "name":"クーリエ", "value": 10, "description": "手がかり捜索速度+10%、カランド貿易の手がかり(6)を入手しやすい" },
+        { "name":"クーリエ", "value": 10, "description": "手がかり捜索速度+10%、カランド貿易の手がかり(6)を入手しやすい" }
       ],
       "vangard": [
         {
@@ -320,9 +320,9 @@
     "color": "#168BBE",
     "skills": {
       "reception": [
-        { "value": 0, "description": "incease seach speed (10%)" },
-        { "value": 10, "description": "incease seach speed (20%)" },
-        { "value": 10, "description": "incease seach speed (45%)" }
+        { "name":"通信員", "value": 0, "description": "ロドス製薬の手がかりを入手しやすい" },
+        { "name":"通信員", "value": 0, "description": "ロドス製薬の手がかりを入手しやすい" },
+        { "name":"旗印", "value": 0, "description": "応接室配置後、捜索された手がかりがロドス製薬でなかった時、ロドス製薬の入手率が更に増加する" }
       ],
       "vangard": [
         {
