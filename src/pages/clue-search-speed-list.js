@@ -20,20 +20,12 @@ const styles = (theme) => ({
       padding: "5px",
     },
   },
-  mainRow: {
-    [theme.breakpoints.down("xs")]: {
-      "& td": {},
-    },
-  },
-  subRow: {
-    display: "none",
-    [theme.breakpoints.down("xs")]: {
-      display: "table-row",
-    },
-  },
   mainCell: {
     [theme.breakpoints.down("xs")]: {
       padding: "4px 4px 4px 8px",
+    },
+    [theme.breakpoints.down(350)]: {
+      fontSize: "10px",
     },
   },
   skillCell: {
@@ -42,6 +34,9 @@ const styles = (theme) => ({
       padding: "4px 4px 4px 8px",
       width: "1.0em",
     },
+    [theme.breakpoints.down(350)]: {
+      fontSize: "10px",
+    },
   },
   checkboxCell: {
     width: "1em",
@@ -49,12 +44,18 @@ const styles = (theme) => ({
     [theme.breakpoints.down("xs")]: {
       padding: "0px 0px 0px 0px",
     },
+    [theme.breakpoints.down(350)]: {
+      fontSize: "10px",
+    },
   },
   headerCell: {
     [theme.breakpoints.down("xs")]: {
       padding: "4px 4px 8px 0px",
       verticalAlign: "top",
       textAlign: "center",
+    },
+    [theme.breakpoints.down(350)]: {
+      fontSize: "10px",
     },
   },
   horizontaBar: {
@@ -65,11 +66,17 @@ const styles = (theme) => ({
   },
   operatorName: {
     whiteSpace: "nowrap",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down(430)]: {
       width: "5.5em",
       maxWidth: "100%",
       overflow: "hidden",
       textOverflow: "ellipsis",
+    },
+  },
+  eliteSelect: {
+    fontSize: "0.875rem",
+    [theme.breakpoints.down(350)]: {
+      fontSize: "10px",
     },
   },
 });
@@ -210,7 +217,7 @@ const OperatorTable = (props) => {
               <Hidden smUp>R</Hidden>
             </TableCell>
             <TableCell className={classes.headerCell}>
-              <Select disableUnderline value={eleteClass} style={{ fontSize: "0.875rem" }} onChange={onHeaderEliteClassChange}>
+              <Select disableUnderline value={eleteClass} className={classes.eliteSelect} onChange={onHeaderEliteClassChange}>
                 <MenuItem value={-1} key={-1}>
                   昇進
                 </MenuItem>
@@ -219,7 +226,7 @@ const OperatorTable = (props) => {
             </TableCell>
             <TableCell className={classes.headerCell}>SPEED</TableCell>
             <TableCell className={classes.skillCell} style={{ paddingRight: "0px" }}>
-              <Hidden xsDown>SKILL</Hidden>
+              <Hidden smDown>SKILL</Hidden>
             </TableCell>
           </TableRow>
         </TableHead>
@@ -240,14 +247,14 @@ const OperatorTable = (props) => {
                 </TableCell>
                 <TableCell className={classes.mainCell}>{op.rarity}</TableCell>
                 <TableCell className={classes.mainCell}>
-                  <Select disableUnderline style={{ fontSize: "0.875rem" }} value={op.elite} onChange={(e) => onEliteClassChange(i, e)}>
+                  <Select disableUnderline className={classes.eliteSelect} value={op.elite} onChange={(e) => onEliteClassChange(i, e)}>
                     {renderMenuItem(op.rarity)}
                   </Select>
                 </TableCell>
                 <TableCell className={classes.mainCell}>+{op.speed}%</TableCell>
                 <TableCell className={classes.skillCell} style={{ paddingRight: "0px" }}>
-                  <Hidden xsDown>{op.skills[op.elite].description}</Hidden>
-                  <Hidden smUp>
+                  <Hidden smDown>{op.skills[op.elite].description}</Hidden>
+                  <Hidden mdUp>
                     <Tooltip title={op.skills[op.elite].description} TransitionComponent={Zoom} arrow placement="bottom" leaveTouchDelay={3000} enterTouchDelay={40}>
                       <IconButton size="small">
                         <MoreVertIcon color="action" />
