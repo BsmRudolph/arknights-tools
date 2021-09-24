@@ -58,7 +58,7 @@ const styles = (theme) => ({
     },
   },
   horizontaBar: {
-    height: "60vh",
+    minHeight: "500px",
     [theme.breakpoints.down("xs")]: {
       height: "75vh",
     },
@@ -266,7 +266,6 @@ const OperatorTable = (props) => {
 
 const Page = (props) => {
   const chartReference = React.useRef();
-  const [savedata, setSavedata] = React.useState(localStorage.getItem(APPKEY));
   const { classes, data } = props;
 
   const createChartData = (ops) => {
@@ -319,7 +318,7 @@ const Page = (props) => {
       }
     }
 
-    const ops = data.allOperatorsJson.nodes; //edges.map((d) => d.node);
+    const ops = data.allOperatorsJson.nodes;
     ops.forEach((op) => {
       op.checked = true;
       op.elite = 0;
@@ -330,11 +329,8 @@ const Page = (props) => {
     return ops;
   };
 
-  //React.useEffect(() => {
-  //  setSavedata(localStorage.getItem(APPKEY));
-  //}, [setSavedata]);
-
-  const operators = loadOperators(savedata);
+  const saveddata = typeof localStorage !== "undefined" ? localStorage.getItem(APPKEY) : undefined;
+  const operators = loadOperators(saveddata);
   const charData = createChartData(operators);
   const page = {
     title: "手がかり捜索速度一覧",
