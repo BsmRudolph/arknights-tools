@@ -8,6 +8,7 @@ import { Grid } from "@material-ui/core";
 import { Zoom } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Head from "../components/head";
+import Layout from "../components/layout";
 import * as Utils from "../commons/utils";
 
 const VERSION = "20210921.21260501";
@@ -335,7 +336,7 @@ const Page = (props) => {
       }
     }
 
-    const ops = data.allOperatorsJson.nodes;
+    const ops = JSON.parse(JSON.stringify(data.allOperatorsJson.nodes));
     ops.forEach((op) => {
       op.checked = true;
       op.elite = 0;
@@ -356,7 +357,7 @@ const Page = (props) => {
     description: "応接室に配置した場合のオペレータの手がかり捜索速度を補正込みでランク表示します",
   };
   return (
-    <main>
+    <Layout>
       <Head title={page.title} description={page.description} image={page.image} />
       <Container maxWidth="lg" className={classes.mainContainer}>
         <div style={{ marginBottom: "20px" }}>{page.title}</div>
@@ -367,7 +368,7 @@ const Page = (props) => {
           <OperatorTable classes={classes} operators={operators} onOperatorsChange={(ops) => handleOperatorsChange(ops)} />
         </Paper>
       </Container>
-    </main>
+    </Layout>
   );
 };
 
